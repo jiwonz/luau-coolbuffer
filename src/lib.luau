@@ -14,7 +14,7 @@ function coolbuffer.fromhex(hex: buffer): buffer -- this will do by number calcu
 	local size = buffer.len(hex)
 	if size % 2 ~= 0 then
 		local b = buffer.create(size + 1)
-		buffer.writeu8(b, 0, 0)
+		buffer.writeu8(b, 0, 48)
 		buffer.copy(b, 1, hex, 0, size)
 		hex = b
 		size += 1
